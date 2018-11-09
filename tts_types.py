@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
-    python to N VOC E API - partial implementation
+    ctypes Python to C++ NunaceVOCEnt components API - (a partial example implementation)
 """
 import os
+import time
+import logging
 from ctypes import *
 from datetime import datetime
-import wave
 from lxml import etree, objectify
-import logging
-import logging
-import time
 
 TTS_CURRENT_VERSION = 1360
 
@@ -21,6 +19,7 @@ ch.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 fh.setFormatter(formatter)
+
 # add the handlers to logger
 logger.addHandler(ch)
 logger.addHandler(fh)
@@ -546,9 +545,8 @@ class TTS_VOICE_INFO(Structure):
 # ****************************************************************************************
 # TtsSystemInit
 
-# TODO - default install location ?
+# TODO - implement cross platform installations components
 components = "c:/Program Files (x86)/Nuance/Vocalizer for Enterprise/common/speech/components"
-
 
 os.environ['PATH'] += os.pathsep + components
 tts = cdll.LoadLibrary('lhstts.dll')
