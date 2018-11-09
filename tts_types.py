@@ -546,7 +546,7 @@ class TTS_VOICE_INFO(Structure):
 # TtsSystemInit
 
 # TODO - implement cross platform installations components
-components = "c:/Program Files (x86)/Nuance/Vocalizer for Enterprise/common/speech/components"
+components = "c:/Program Files (x86)/Nuance/*****;-)*******/common/speech/components"
 
 os.environ['PATH'] += os.pathsep + components
 tts = cdll.LoadLibrary('lhstts.dll')
